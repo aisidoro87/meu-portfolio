@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Anderson Isidoro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Skip link for keyboard accessibility -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+        <div class="logo">
+            <h1>Anderson <span>Isidoro</span></h1>
+        </div>
+        <nav aria-label="Navegação primária">
+            <button class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul class="navegacao-primaria">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#resume">Resumo</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO SECTION -->
+        <section id="home" aria-label="Seção de introdução" class="section-div">
+            <div class="hero-text">
+                <h2>Olá, eu sou </h2>
+                <h2 class="digitando">Web Developer and UX/UI Designer</h2>
+                <p class="hero_paragrafo">Desenvolvedor Front-end em transição de carreira, apaixonado por tecnologia e pela criação de interfaces modernas, funcionais e responsivas. Utilizo React, TypeScript, JavaScript e ferramentas de IA para transformar ideias em experiências digitais.</p>
+                <a href="#" class="btn-cv">Download CV</a>
+            </div>
+            <div class="hero-image">
+                <img src="/imgs/anderson-frente.png" alt="Foto Anderson - Web Developer" width="450" height="600"
+                    loading="eager">
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" aria-label="Seção sobre mim" class="sobre">
+            <div class="sobre_titulo">
+                <h1>Sobre Mim</h1>
+                <p>Perfil Profissional – Tudo sobre mim</p>
+                <div class="dots-separator" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="sobre_layout">
+                <div class="sobre_imagem_container">
+                    <img src="imgs/anderson-direita.png" alt="Foto profissional de Anderson" width="450" height="600"
+                        loading="lazy">
+                </div>
+                <div class="sobre_conteudo">
+                    <div class="sobre_texto">
+                        <h1>Eu sou o Anderson</h1>
+                        <p class="sobre_paragrafo">Sou <strong>Desenvolvedor Front-end em transição de carreira</strong>, com experiência
+                            prática no desenvolvimento de aplicações web utilizando <strong>HTML, CSS, JavaScript, React e TypeScript.</strong>
+                            <br><br>
+                            Desde 2025 venho estudando e desenvolvendo projetos práticos e entre meus projetos estão: <strong>Kallos Barbearia, MedCare Connect, Dashboard de Segurança do Trabalho, Lista de Tarefas, Pesquisa de Clima</strong>,
+                            explorando desde JavaScript puro e APIs até aplicações com React, TypeScript, bancos de dados e serviços externos.
+                            <br><br>
+                            Atualmente, estou desenvolvendo um <strong>SaaS para gestão de Segurança e Saúde do Trabalho</strong>, unindo
+                            React, TypeScript, Supabase, APIs e Inteligência Artificial à minha experiência de mais de
+                            17 anos na área de SST.
+                            <br><br>
+                            Também utilizo ChatGPT, Antigravity (Gemini CLI), Lovable, v0 e GitHub Copilot como ferramentas integradas ao meu processo de desenvolvimento, apoiando prototipação, aprendizado, debugging, refatoração e produtividade — sempre buscando compreender, validar e aprimorar o código.
+                        </p>
+                    </div>
+                    <div class="sobre_info">
+                        <p><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span>Data de Nascimento:</span>
+                            19 Fev 1987</p>
+                        <!--<p><i class="fa-sharp fa-solid fa-laptop-code" aria-hidden="true"></i><span>Freelance:</span> Available</p>-->
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Cidade:</span> São Vicente,
+                            Brasil</p>
+                        <p><i class="fa-sharp fa-solid fa-globe" aria-hidden="true"></i><span>Idiomas:</span> Espanhol e Inglês (Básico)</p>
+                        <p><i class="fa-solid fa-flag" aria-hidden="true"></i><span>Nacionalidade:</span> Brasileira</p>   
+                        <p><i class="fa-solid fa-phone-volume" aria-hidden="true"></i><span>Contato:</span> (13)98132-5597</p>
+                        <p><i class="fa-solid fa-passport" aria-hidden="true"></i><span>Cidadania:</span> Portuguesa (União Europeia)</p>
+                        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>E-mail:</span>aisidoroads@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" aria-label="Seção de serviços prestados" class="services">
+            <div class="sobre_titulo">
+                <h1>Minhas Especialidades</h1>
+                <p>Tecnologias e soluções que utilizo no desenvolvimento de aplicações web</p>
+                <div class="dots-separator" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="my_services">
+                <ul aria-label="Lista de serviços prestados">
+                    <li>
+                        <i class="fa-sharp fa-solid fa-pen-to-square" aria-hidden="true"></i>
+                        <h3>Front-end</h3>
+                        <p>Interfaces modernas e responsivas utilizando HTML, CSS, JavaScript, React e TypeScript.</p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                        <h3>React & TypeScript</h3>
+                        <p>Aplicações escaláveis com componentes reutilizáveis, organização de código e boas práticas (em aprendizado).</p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-camera" aria-hidden="true"></i>
+                        <h3>UI/UX Designer</h3>
+                        <p>Desenvolvimento de interfaces intuitivas, com foco em usabilidade, hierarquia visual e experiência do usuário.</p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        <h3>APIs & Dados</h3>
+                        <p>Integração de aplicações com APIs, bancos de dados e serviços externos.</p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-medal" aria-hidden="true"></i>
+                        <h3>Inteligência Artificial</h3>
+                        <p>Uso estratégico de ferramentas de IA para prototipação, desenvolvimento, produtividade e evolução de projetos.</p>
+                    </li>
+                    <li>
+                        <i class="fa-sharp fa-solid fa-palette" aria-hidden="true"></i>
+                        <h3>Deploy & Produção</h3>
+                        <p>Publicação e manutenção de aplicações utilizando Git, GitHub, Vercel e outras ferramentas modernas.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- RESUME SECTION -->
+        <section id="resume" aria-label="Seção de currículo e habilidades" class="my_resume">
+            <div class="sobre_titulo">
+                <h1>Resumo</h1>
+                <p>Um resumo da minha formação, experiência e principais conquistas profissionais.</p>
+                <div class="dots-separator" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="resume_gerenico">
+                <div class="resume_block">
+                    <h2 class="experience"><i class="fa-solid fa-handshake" aria-hidden="true"></i>EXPERIÊNCIAS</h2>
+                    <div class="experience_content">
+                        <div class="resume_slide">
+                            <span class="date">2017 - 2019</span>
+                            <h3>UI/UX Developer - Themeforest</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, laboriosam. Possimus,
+                                excepturi voluptatum provident.</p>
+                        </div>
+                        <div class="resume_slide">
+                            <span class="date">2015 - 2017</span>
+                            <h3>Web Design - BubbleBix</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ex. Molestias, at!</p>
+                        </div>
+                        <div class="resume_slide">
+                            <span class="date">2022 - 2023</span>
+                            <h3>Web Developer - GlobalSix</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, ex. Temporibus voluptatem
+                                architecto molestiae.</p>
+                        </div>
+                        <ul class="resume_dots" aria-label="Controle de experiência">
+                            <li class="ativo" data-index="0" role="button" aria-label="Ver experiência de 2017 a 2019">
+                                <i class="fa-sharp fa-solid fa-circle" aria-hidden="true"></i>
+                            </li>
+                            <li data-index="1" role="button" aria-label="Ver experiência de 2015 a 2017"><i
+                                    class="fa-sharp fa-solid fa-circle" aria-hidden="true"></i></li>
+                            <li data-index="2" role="button" aria-label="Ver experiência de 2022 a 2023"><i
+                                    class="fa-sharp fa-solid fa-circle" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="resume_block">
+                    <h2 class="education"><i class="fa-solid fa-book" aria-hidden="true"></i>FORMAÇÃO</h2>
+                    <div class="education_content">
+                        <div class="resume_slide">
+                            <span class="date">2015 - 2019</span>
+                            <h3>Bachelor - University</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, laboriosam. Possimus,
+                                excepturi voluptatum.</p>
+                        </div>
+                        <div class="resume_slide">
+                            <span class="date">2019 - 2022</span>
+                            <h3>WebMaster - Fullstack</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, laboriosam. Consequuntur
+                                molestias aspernatur.</p>
+                        </div>
+                        <ul class="resume_dots" aria-label="Controle de educação">
+                            <li class="ativo" data-index="0" role="button" aria-label="Ver educação de 2015 a 2019"><i
+                                    class="fa-sharp fa-solid fa-circle" aria-hidden="true"></i></li>
+                            <li data-index="1" role="button" aria-label="Ver educação de 2019 a 2022"><i
+                                    class="fa-sharp fa-solid fa-circle" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SKILLS & FUN FACTS -->
+            <div class="cursos">
+                <div class="my_skill">
+                    <h2><i class="fa-sharp fa-regular fa-star" aria-hidden="true"></i>MY SKILL</h2>
+
+                    <div class="skill_bar_group">
+                        <div class="skill_info">
+                            <span>HTML 5</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill_progress">
+                            <div class="skill_fill" style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill_bar_group">
+                        <div class="skill_info">
+                            <span>CSS 3</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill_progress">
+                            <div class="skill_fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill_bar_group">
+                        <div class="skill_info">
+                            <span>PHP</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill_progress">
+                            <div class="skill_fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill_bar_group">
+                        <div class="skill_info">
+                            <span>REACT JS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill_progress">
+                            <div class="skill_fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill_bar_group">
+                        <div class="skill_info">
+                            <span>JAVASCRIPT</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill_progress">
+                            <div class="skill_fill" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill_bar_group">
+                        <div class="skill_info">
+                            <span>GIT</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill_progress">
+                            <div class="skill_fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="funfacts">
+                    <h2><i class="fa-solid fa-heart" aria-hidden="true"></i>FUN FACTS</h2>
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+                            <div class="fact-data">
+                                <span class="counter" data-target="1245">1245</span>
+                                <p>Coffee Cups</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-medal" aria-hidden="true"></i>
+                            <div class="fact-data">
+                                <span class="counter" data-target="28">28</span>
+                                <p>Awards Won</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+                            <div class="fact-data">
+                                <span class="counter" data-target="6025">6025</span>
+                                <p>Happy Clients</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-users" aria-hidden="true"></i>
+                            <div class="fact-data">
+                                <span class="counter" data-target="289">289</span>
+                                <p>Projects Completed</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!--MY PROJECTS SECTION-->
+        <section id="portfolio" aria-label="Seção de projetos e portfólio" class="projects">
+            <div class="sobre_titulo">
+                <h1>Meus Projetos</h1>
+                <p>Veja meus trabalhos – Uma seleção de projetos que desenvolvi.</p>
+                <div class="dots-separator" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="project_models">
+                <ul class="project_navegacao" aria-label="Filtro de modelos de projetos">
+                    <li class="all ativo" data-filter="all" role="button" tabindex="0">Todos</li>
+                    <li class="design" data-filter="design" role="button" tabindex="0">Finalizados</li>
+                    <li class="graphic" data-filter="graphic" role="button" tabindex="0">Em Andamento</li>
+                    <li class="website" data-filter="website" role="button" tabindex="0">Website</li>
+                </ul>
+            </div>
+
+            <div class="projects_armazenamento">
+                <ul aria-label="Galeria de projetos">
+
+                    <li class="project-card design" data-category="design">
+                        <a href="https://medcare-connect.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="project-image-wrapper">
+                                <img src="imgs/logotipo_mc.png" alt="Logotipo MedCare Connect" width="300" height="200"
+                                    loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <h3>MedCare Connect</h3>
+                                        <span>website</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="project-card design" data-category="design">
+                        <a href="https://buscar-clima-tempo.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="project-image-wrapper">
+                                <img src="imgs/busca_clima.png" alt="Imagem da tela inicial do app de Buscar clima"
+                                    width="300" height="200" loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Buscar Clima</h3>
+                                        <span>Website</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="project-card graphic" data-category="graphic">
+                        <a href="https://tarefasemdia.vercel.app/" target="_blank" rel="noopener noreferrer">
+                            <div class="project-image-wrapper">
+                                <img src="imgs/lista_tarefas.png" alt="Imagem da tela inicial do app Lista de Tarefas"
+                                    width="300" height="200" loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Lista de Tarefas</h3>
+                                        <span>Website</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="project-card graphic" data-category="graphic">
+                        <a href="https://kallos-appointment-booker.vercel.app/" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-image-wrapper">
+                                <img src="imgs/kallos_icon.png" alt="Logotipo do app de agendamento da Kallos Barbearia"
+                                    width="300" height="200" loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Kallos Barbearia</h3>
+                                        <span>Website</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="project-card website" data-category="website">
+                        <a href="https://saudeocupacional-dashboard.vercel.app/" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="project-image-wrapper">
+                                <img src="imgs/logotipo_tst.png"
+                                    alt="Logotipo TST ou prévia do Dashboard de Segurança do Trabalho" width="300"
+                                    height="200" loading="lazy">
+                                <div class="project-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Dashboard Segurança do Trabalho</h3>
+                                        <span>Website</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="project-card website" data-category="website">
+                        <div class="project-image-wrapper">
+                            <img src="imgs/marioword.jpeg" alt="Landing Page do filme Mario World" width="300"
+                                height="200" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>Mario World Movie LP</h3>
+                                    <span>Website</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="project-card website" data-category="website">
+                        <div class="project-image-wrapper">
+                            <img src="imgs/netflix.jpeg" alt="Clone da tela inicial da Netflix" width="300" height="200"
+                                loading="lazy">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>Netflix Clone UI</h3>
+                                    <span>Website</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="project-card website" data-category="website">
+                        <div class="project-image-wrapper">
+                            <img src="imgs/sonic.jpeg" alt="Landing Page do filme Sonic" width="300" height="200"
+                                loading="lazy">
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <h3>Sonic Movie Landing Page</h3>
+                                    <span>Website</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a href="#portfolio" class="load-more-btn">carregar mais itens...</a>
+        </section>
+
+        <!-- CONTACT SECTION (GET IN TOUCH) -->
+        <section id="contact" aria-label="Seção de contato" class="contact-section">
+            <div class="sobre_titulo">
+                <h1>Entre em contato</h1>
+                <p>Fique à vontade para entrar em contato comigo</p>
+                <div class="dots-separator" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <form class="contact-form" autocomplete="on">
+                <div class="form-row">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" required placeholder="Ex: Anderson Silva"
+                            autocomplete="name">
+                        <label for="name">Seu Nome</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" required placeholder="Ex: name@example.com"
+                            autocomplete="email" spellcheck="false">
+                        <label for="email">Seu E-mail</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="subject" name="subject" required placeholder="Ex: Web Design Project"
+                        autocomplete="off">
+                    <label for="subject">Assunto</label>
+                </div>
+                <div class="input-group">
+                    <textarea id="message" name="message" rows="5" required
+                        placeholder="Write your message here…"></textarea>
+                    <label for="message">Como posso ajudar você?</label>
+                </div>
+                <button type="submit" class="submit-btn">Entre em contato agora</button>
+            </form>
+
+            <div class="contact-social-bar">
+                <nav aria-label="Navegação de links sociais">
+                    <ul class="footer_sociais">
+                        <li><a href="https://www.linkedin.com/in/anderson-isidoro/" target="_blank"
+                                aria-label="Acessar perfil do LinkedIn"><i class="fa-brands fa-linkedin-in"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.instagram.com/andersoni_87" target="_blank"
+                                aria-label="Acessar perfil do Instagram"><i class="fa-brands fa-instagram"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://github.com/aisidoro87" target="_blank"
+                                aria-label="Acessar perfil do GitHub"><i class="fa-brands fa-github-alt"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://web.whatsapp.com/" target="_blank"
+                                aria-label="Acessar o whatsapp web"><i class="fa-brands fa-whatsapp"
+                                    aria-hidden="true"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
