@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initResumeTabs();
     initPortfolioFilter();
-    initCounterAnimation();
     initContactForm();
     initScrollActive();
 });
@@ -146,48 +145,6 @@ function initPortfolioFilter() {
                 }
             });
         });
-    });
-}
-
-/* COUNTER ANIMATION FOR FUN FACTS */
-function initCounterAnimation() {
-    const counters = document.querySelectorAll('.funfacts .counter');
-    if (counters.length === 0) return;
-    
-    const speed = 150; // Controls counts speed duration
-    
-    const animate = (counter) => {
-        const target = +counter.getAttribute('data-target');
-        let count = 0;
-        
-        // Quick update step size calculation
-        const step = target / speed;
-        
-        const updateCount = () => {
-            count += step;
-            if (count < target) {
-                counter.innerText = Math.ceil(count);
-                requestAnimationFrame(updateCount);
-            } else {
-                counter.innerText = target;
-            }
-        };
-        
-        updateCount();
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animate(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    counters.forEach(counter => {
-        counter.innerText = '0';
-        observer.observe(counter);
     });
 }
 
