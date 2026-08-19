@@ -6,21 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initPortfolioFilter();
     initContactForm();
     initScrollActive();
+    initAndersonAI();
+
 });
 
 /* DYNAMIC TYPING ANIMATION */
 function initTypingAnimation() {
     const element = document.querySelector('.digitando');
     if (!element) return;
-    
+
     const phrases = ["Desenvolvedor Front-end", "Freelancer", "Criador de Soluções", "Entusiasta de Tecnologia"];
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    
+
     function type() {
         const currentPhrase = phrases[phraseIndex];
-        
+
         if (isDeleting) {
             element.innerText = currentPhrase.substring(0, charIndex - 1);
             charIndex--;
@@ -28,13 +30,13 @@ function initTypingAnimation() {
             element.innerText = currentPhrase.substring(0, charIndex + 1);
             charIndex++;
         }
-        
+
         let typingSpeed = 100;
-        
+
         if (isDeleting) {
             typingSpeed /= 2; // erase twice as fast
         }
-        
+
         if (!isDeleting && charIndex === currentPhrase.length) {
             typingSpeed = 2000; // pause at end
             isDeleting = true;
@@ -43,10 +45,10 @@ function initTypingAnimation() {
             phraseIndex = (phraseIndex + 1) % phrases.length;
             typingSpeed = 500; // pause before typing next
         }
-        
+
         setTimeout(type, typingSpeed);
     }
-    
+
     type();
 }
 
@@ -60,7 +62,7 @@ function initMobileMenu() {
         const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
         toggleBtn.setAttribute('aria-expanded', !expanded);
         navMenu.classList.toggle('ativado');
-        
+
         const icon = toggleBtn.querySelector('i');
         if (navMenu.classList.contains('ativado')) {
             icon.className = 'fa-solid fa-xmark';
@@ -68,7 +70,7 @@ function initMobileMenu() {
             icon.className = 'fa-solid fa-bars';
         }
     });
-    
+
     // Close menu when clicking a link
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
@@ -82,28 +84,28 @@ function initMobileMenu() {
 /* RESUME TIMELINE SLIDESHOW SWITCHER */
 function initResumeTabs() {
     const resumeBlocks = document.querySelectorAll('.resume_block');
-    
+
     resumeBlocks.forEach(block => {
         const slides = block.querySelectorAll('.resume_slide');
         const dots = block.querySelectorAll('.resume_dots li');
-        
+
         if (slides.length > 0 && dots.length > 0) {
             // Reset active states
             slides.forEach(s => s.classList.remove('ativo'));
             dots.forEach(d => d.classList.remove('ativo'));
-            
+
             // Activate first slide
             slides[0].classList.add('ativo');
             dots[0].classList.add('ativo');
         }
-        
+
         dots.forEach((dot) => {
             dot.addEventListener('click', () => {
                 const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
-                
+
                 slides.forEach(s => s.classList.remove('ativo'));
                 dots.forEach(d => d.classList.remove('ativo'));
-                
+
                 if (slides[targetIndex]) {
                     slides[targetIndex].classList.add('ativo');
                 }
@@ -117,10 +119,10 @@ function initResumeTabs() {
 function initPortfolioFilter() {
     const filterButtons = document.querySelectorAll('.project_navegacao li');
     const projectCards = document.querySelectorAll('.projects_armazenamento .project-card');
-    
+
     // Initially show all
     projectCards.forEach(card => card.classList.add('ativo'));
-    
+
     filterButtons.forEach(btn => {
         // Keyboard support for interactive li elements
         btn.addEventListener('keydown', (e) => {
@@ -129,13 +131,13 @@ function initPortfolioFilter() {
                 btn.click();
             }
         });
-        
+
         btn.addEventListener('click', () => {
             filterButtons.forEach(b => b.classList.remove('ativo'));
             btn.classList.add('ativo');
-            
+
             const filterValue = btn.getAttribute('data-filter');
-            
+
             projectCards.forEach(card => {
                 const category = card.getAttribute('data-category');
                 if (filterValue === 'all' || category === filterValue) {
@@ -152,28 +154,28 @@ function initPortfolioFilter() {
 function initContactForm() {
     const form = document.querySelector('.contact-form');
     if (!form) return;
-    
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const submitBtn = form.querySelector('.submit-btn');
         const originalText = submitBtn.innerText;
-        
+
         // Show loading spinner / state
         submitBtn.disabled = true;
         submitBtn.innerText = 'Sending…'; // Vercel rule: end with ellipsis
-        
+
         // Mock server POST request
         setTimeout(() => {
             submitBtn.innerText = 'Sent!';
             form.reset();
-            
+
             // Create nice feedback toast
             const toast = document.createElement('div');
             toast.className = 'toast-notification';
             toast.setAttribute('role', 'alert');
             toast.setAttribute('aria-live', 'polite');
-            
+
             // Style properties directly (avoid layout shifts)
             Object.assign(toast.style, {
                 position: 'fixed',
@@ -192,10 +194,10 @@ function initContactForm() {
                 backdropFilter: 'blur(8px)',
                 transition: 'opacity 0.3s ease, transform 0.3s ease'
             });
-            
+
             toast.innerText = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
             document.body.appendChild(toast);
-            
+
             // Clear toast after 4 seconds
             setTimeout(() => {
                 toast.style.opacity = '0';
@@ -206,7 +208,7 @@ function initContactForm() {
                     submitBtn.innerText = originalText;
                 }, 300);
             }, 4000);
-            
+
         }, 1500);
     });
 }
@@ -216,25 +218,167 @@ function initScrollActive() {
     const sections = document.querySelectorAll('main > section');
     const navLinks = document.querySelectorAll('header .navegacao-primaria li a');
     if (sections.length === 0 || navLinks.length === 0) return;
-    
+
     window.addEventListener('scroll', () => {
         let current = '';
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            
+
             // Compensate for fixed header height offset
             if (window.scrollY >= (sectionTop - 130)) {
                 current = section.getAttribute('id');
             }
         });
-        
+
         navLinks.forEach(link => {
             link.classList.remove('ativo');
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('ativo');
             }
         });
+    });
+}
+
+/* ANDERSON AI - CHAT INTERACTION */
+function initAndersonAI() {
+    const toggleBtn = document.querySelector('#ai-toggle');
+    const chat = document.querySelector('#ai-chat');
+    const closeBtn = document.querySelector('#ai-close');
+    const input = document.querySelector('#ai-input');
+    const welcomeMessage = document.querySelector('#ai-welcome');
+    const form = document.querySelector('#ai-form');
+    const messages = document.querySelector('#ai-messages');
+
+    if (
+        !toggleBtn ||
+        !chat ||
+        !closeBtn ||
+        !input ||
+        !welcomeMessage ||
+        !form ||
+        !messages
+    ) return;
+
+    const welcomeText = `Olá! 👋
+Sou o Anderson AI. Posso responder perguntas sobre o Anderson, seus projetos, tecnologias e experiência profissional.`;
+
+    let typingStarted = false;
+
+    function typeWelcomeMessage() {
+        if (typingStarted) return;
+
+        typingStarted = true;
+
+        let index = 0;
+
+        function type() {
+            if (index < welcomeText.length) {
+                if (welcomeText[index] === '\n') {
+                    welcomeMessage.innerHTML += '<br>';
+                } else {
+                    welcomeMessage.innerHTML += welcomeText[index];
+                }
+
+                index++;
+
+                setTimeout(type, 25);
+            }
+        }
+
+        type();
+    }
+
+    function toggleChat() {
+        const isOpen = chat.classList.toggle('ativo');
+
+        chat.setAttribute('aria-hidden', !isOpen);
+
+        if (isOpen) {
+            input.focus();
+            typeWelcomeMessage();
+        }
+    }
+
+    function showTypingIndicator() {
+        const typing = document.createElement('div');
+
+        typing.classList.add('ai-typing');
+
+        typing.innerHTML = `
+            <span></span>
+            <span></span>
+            <span></span>
+        `;
+
+        messages.appendChild(typing);
+        messages.scrollTop = messages.scrollHeight;
+
+        return typing;
+    }
+
+    toggleBtn.addEventListener('click', toggleChat);
+
+    closeBtn.addEventListener('click', () => {
+        chat.classList.remove('ativo');
+        chat.setAttribute('aria-hidden', 'true');
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const question = input.value.trim();
+
+        if (!question) return;
+
+        const userMessage = document.createElement('div');
+
+        userMessage.classList.add(
+            'ai-message',
+            'ai-message-user'
+        );
+
+        userMessage.textContent = question;
+
+        messages.appendChild(userMessage);
+
+        input.value = '';
+        input.focus();
+
+        messages.scrollTop = messages.scrollHeight;
+
+        const typingIndicator = showTypingIndicator();
+
+        setTimeout(() => {
+            typingIndicator.remove();
+
+            const botMessage = document.createElement('div');
+
+            botMessage.classList.add(
+                'ai-message',
+                'ai-message-bot'
+            );
+
+            const botText =
+    'Essa é uma ótima pergunta! 🤖 Em breve poderei responder perguntas sobre meus projetos, tecnologias e experiência profissional.';
+
+messages.appendChild(botMessage);
+
+let index = 0;
+
+function typeBotMessage() {
+    if (index < botText.length) {
+        botMessage.textContent += botText[index];
+        index++;
+
+        messages.scrollTop = messages.scrollHeight;
+
+        setTimeout(typeBotMessage, 25);
+    }
+}
+
+typeBotMessage();
+        }, 1500);
     });
 }

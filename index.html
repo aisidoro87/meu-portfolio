@@ -448,6 +448,44 @@
         </section>
     </main>
 
+        </main>
+
+    <!-- ANDERSON AI -->
+    <button class="ai-toggle" id="ai-toggle" aria-label="Abrir Anderson AI">
+        <i class="fa-solid fa-robot" aria-hidden="true"></i>
+    </button>
+
+    <div class="ai-chat" id="ai-chat" aria-hidden="true">
+        <div class="ai-header">
+            <div>
+                <strong>Anderson AI</strong>
+                <span>Assistente virtual</span>
+            </div>
+
+            <button class="ai-close" id="ai-close" aria-label="Fechar Anderson AI">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="ai-messages" id="ai-messages">
+            <div class="ai-message ai-message-bot" id="ai-welcome"></div>
+        </div>
+
+        <form class="ai-form" id="ai-form">
+            <input
+                type="text"
+                id="ai-input"
+                placeholder="Digite sua pergunta..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit" aria-label="Enviar pergunta">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

@@ -334,7 +334,7 @@ main>section {
 .sobre_imagem_container {
     display: flex;
     justify-content: center;
-    margin-bottom: 17em;
+    margin-bottom: 14em;
 }
 
 .sobre_imagem_container img {
@@ -907,6 +907,228 @@ main>section {
         margin-left: -20px;
         margin-right: -20px;
         width: calc(100% + 40px);
+    }
+}
+
+/* =========================================
+   ANDERSON AI
+   ========================================= */
+
+.ai-toggle {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 58px;
+    height: 58px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 9998;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ai-toggle:hover {
+    transform: translateY(-4px) scale(1.05);
+    background-color: var(--accent-hover);
+}
+
+.ai-chat {
+    position: fixed;
+    right: 25px;
+    bottom: 95px;
+    width: 360px;
+    height: 500px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.ai-chat.ativo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.ai-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ai-header div {
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-header strong {
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.ai-header span {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.ai-close {
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.ai-close:hover {
+    color: var(--accent-color);
+}
+
+.ai-messages {
+    flex: 1;
+    padding: 18px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ai-message {
+    max-width: 85%;
+    padding: 10px 13px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.ai-message-bot {
+    align-self: flex-start;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.ai-message-user {
+    align-self: flex-end;
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.ai-form {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+}
+
+.ai-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.ai-form input:focus {
+    border-color: var(--accent-color);
+}
+
+.ai-form button {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ai-form button:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+.ai-typing {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 13px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.ai-typing span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text-muted);
+    animation: aiTyping 1.2s infinite ease-in-out;
+}
+
+.ai-typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.ai-typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes aiTyping {
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    30% {
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+}
+
+/* ANDERSON AI — MOBILE */
+
+@media (max-width: 768px) {
+
+    .ai-chat {
+        right: 15px;
+        bottom: 85px;
+        width: calc(100vw - 30px);
+        height: 70vh;
+        max-height: 500px;
+    }
+
+    .ai-toggle {
+        right: 15px;
+        bottom: 15px;
     }
 }
 
