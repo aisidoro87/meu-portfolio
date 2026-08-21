@@ -259,9 +259,12 @@ function initAndersonAI() {
         !welcomeMessage ||
         !form ||
         !messages
-    ) return;
+    ) {
+        return;
+    }
 
     const welcomeText = `Olá! 👋
+
 Sou o Anderson AI. Posso responder perguntas sobre o Anderson, seus projetos, tecnologias e experiência profissional.`;
 
     let typingStarted = false;
@@ -313,6 +316,7 @@ Sou o Anderson AI. Posso responder perguntas sobre o Anderson, seus projetos, te
         `;
 
         messages.appendChild(typing);
+
         messages.scrollTop = messages.scrollHeight;
 
         return typing;
@@ -325,13 +329,14 @@ Sou o Anderson AI. Posso responder perguntas sobre o Anderson, seus projetos, te
         chat.setAttribute('aria-hidden', 'true');
     });
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         const question = input.value.trim();
 
         if (!question) return;
 
+        // Mensagem do usuário
         const userMessage = document.createElement('div');
 
         userMessage.classList.add(
@@ -348,9 +353,53 @@ Sou o Anderson AI. Posso responder perguntas sobre o Anderson, seus projetos, te
 
         messages.scrollTop = messages.scrollHeight;
 
+        // Indicador de carregamento
         const typingIndicator = showTypingIndicator();
 
-        setTimeout(() => {
+        try {
+            // Envia a pergunta para o backend
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify({
+                    message: question
+                })
+            });
+
+            const data = await response.json();
+
+            // Remove o indicador
+            typingIndicator.remove();
+
+            // Verifica se o backend retornou erro
+            if (!response.ok) {
+                throw new Error(
+                    data.error || 'Erro ao obter resposta da IA.'
+                );
+            }
+
+            // Cria a mensagem da IA
+            const botMessage = document.createElement('div');
+
+            botMessage.classList.add(
+                'ai-message',
+                'ai-message-bot'
+            );
+
+            botMessage.textContent = data.response;
+
+            messages.appendChild(botMessage);
+
+            messages.scrollTop = messages.scrollHeight;
+
+        } catch (error) {
+
+            console.error('Erro no Anderson AI:', error);
+
             typingIndicator.remove();
 
             const botMessage = document.createElement('div');
@@ -360,25 +409,12 @@ Sou o Anderson AI. Posso responder perguntas sobre o Anderson, seus projetos, te
                 'ai-message-bot'
             );
 
-            const botText =
-    'Essa é uma ótima pergunta! 🤖 Em breve poderei responder perguntas sobre meus projetos, tecnologias e experiência profissional.';
+            botMessage.textContent =
+                'Desculpe, não consegui processar sua pergunta no momento. 😕';
 
-messages.appendChild(botMessage);
+            messages.appendChild(botMessage);
 
-let index = 0;
-
-function typeBotMessage() {
-    if (index < botText.length) {
-        botMessage.textContent += botText[index];
-        index++;
-
-        messages.scrollTop = messages.scrollHeight;
-
-        setTimeout(typeBotMessage, 25);
-    }
-}
-
-typeBotMessage();
-        }, 1500);
+            messages.scrollTop = messages.scrollHeight;
+        }
     });
 }
