@@ -258,135 +258,15 @@
 
             <div class="project_models">
                 <ul class="project_navegacao" aria-label="Filtro de modelos de projetos">
-                    <li class="all ativo" data-filter="all" role="button" tabindex="0">Todos</li>
-                    <li class="design" data-filter="design" role="button" tabindex="0">Finalizados</li>
-                    <li class="graphic" data-filter="graphic" role="button" tabindex="0">Em Andamento</li>
-                    <li class="website" data-filter="website" role="button" tabindex="0">Website</li>
+                    <li class="ativo" data-filter="all" role="button" tabindex="0">Todos</li>
+                    <li data-filter="concluidos" role="button" tabindex="0">Concluídos</li>
+                    <li data-filter="em-andamento" role="button" tabindex="0">Em andamento</li>
                 </ul>
             </div>
 
             <div class="projects_armazenamento">
-                <ul aria-label="Galeria de projetos">
-
-                    <li class="project-card design" data-category="design">
-                        <a href="https://medcare-connect.vercel.app/" target="_blank" rel="noopener noreferrer">
-                            <div class="project-image-wrapper">
-                                <img src="imgs/logotipo_mc.png" alt="Logotipo MedCare Connect" width="300" height="200"
-                                    loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="overlay-content">
-                                        <h3>MedCare Connect</h3>
-                                        <span>website</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="project-card design" data-category="design">
-                        <a href="https://buscar-clima-tempo.vercel.app/" target="_blank" rel="noopener noreferrer">
-                            <div class="project-image-wrapper">
-                                <img src="imgs/busca_clima.png" alt="Imagem da tela inicial do app de Buscar clima"
-                                    width="300" height="200" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Buscar Clima</h3>
-                                        <span>Website</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="project-card graphic" data-category="graphic">
-                        <a href="https://tarefasemdia.vercel.app/" target="_blank" rel="noopener noreferrer">
-                            <div class="project-image-wrapper">
-                                <img src="imgs/lista_tarefas.png" alt="Imagem da tela inicial do app Lista de Tarefas"
-                                    width="300" height="200" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Lista de Tarefas</h3>
-                                        <span>Website</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="project-card graphic" data-category="graphic">
-                        <a href="https://kallos-appointment-booker.vercel.app/" target="_blank"
-                            rel="noopener noreferrer">
-                            <div class="project-image-wrapper">
-                                <img src="imgs/kallos_icon.png" alt="Logotipo do app de agendamento da Kallos Barbearia"
-                                    width="300" height="200" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Kallos Barbearia</h3>
-                                        <span>Website</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="project-card website" data-category="website">
-                        <a href="https://saudeocupacional-dashboard.vercel.app/" target="_blank"
-                            rel="noopener noreferrer">
-                            <div class="project-image-wrapper">
-                                <img src="imgs/logotipo_tst.png"
-                                    alt="Logotipo TST ou prévia do Dashboard de Segurança do Trabalho" width="300"
-                                    height="200" loading="lazy">
-                                <div class="project-overlay">
-                                    <div class="overlay-content">
-                                        <h3>Dashboard Segurança do Trabalho</h3>
-                                        <span>Website</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="project-card website" data-category="website">
-                        <div class="project-image-wrapper">
-                            <img src="imgs/marioword.jpeg" alt="Landing Page do filme Mario World" width="300"
-                                height="200" loading="lazy">
-                            <div class="project-overlay">
-                                <div class="overlay-content">
-                                    <h3>Mario World Movie LP</h3>
-                                    <span>Website</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="project-card website" data-category="website">
-                        <div class="project-image-wrapper">
-                            <img src="imgs/netflix.jpeg" alt="Clone da tela inicial da Netflix" width="300" height="200"
-                                loading="lazy">
-                            <div class="project-overlay">
-                                <div class="overlay-content">
-                                    <h3>Netflix Clone UI</h3>
-                                    <span>Website</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="project-card website" data-category="website">
-                        <div class="project-image-wrapper">
-                            <img src="imgs/sonic.jpeg" alt="Landing Page do filme Sonic" width="300" height="200"
-                                loading="lazy">
-                            <div class="project-overlay">
-                                <div class="overlay-content">
-                                    <h3>Sonic Movie Landing Page</h3>
-                                    <span>Website</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                <div class="projects-grid" id="projects-grid" aria-label="Galeria de projetos"></div>
             </div>
-            <a href="#portfolio" class="load-more-btn">carregar mais itens...</a>
         </section>
 
         <!-- CONTACT SECTION (GET IN TOUCH) -->
@@ -402,48 +282,25 @@
                 </div>
             </div>
 
-            <form class="contact-form" autocomplete="on">
-                <div class="form-row">
-                    <div class="input-group">
-                        <input type="text" id="name" name="name" required placeholder="Ex: Anderson Silva"
-                            autocomplete="name">
-                        <label for="name">Seu Nome</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" id="email" name="email" required placeholder="Ex: name@example.com"
-                            autocomplete="email" spellcheck="false">
-                        <label for="email">Seu E-mail</label>
-                    </div>
+            <div class="contact-cards-container">
+                <div class="contact-cards" aria-label="Links de contato profissional e redes sociais">
+                    <a href="https://www.linkedin.com/in/anderson-isidoro/" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Acessar perfil do LinkedIn">
+                        <span class="contact-card__icon" aria-hidden="true"><i class="fa-brands fa-linkedin-in"></i></span>
+                        <span class="contact-card__label">LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/andersoni_87" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Acessar perfil do Instagram">
+                        <span class="contact-card__icon" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
+                        <span class="contact-card__label">Instagram</span>
+                    </a>
+                    <a href="https://github.com/aisidoro87" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Acessar perfil do GitHub">
+                        <span class="contact-card__icon" aria-hidden="true"><i class="fa-brands fa-github-alt"></i></span>
+                        <span class="contact-card__label">GitHub</span>
+                    </a>
+                    <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Acessar o WhatsApp">
+                        <span class="contact-card__icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
+                        <span class="contact-card__label">WhatsApp</span>
+                    </a>
                 </div>
-                <div class="input-group">
-                    <input type="text" id="subject" name="subject" required placeholder="Ex: Web Design Project"
-                        autocomplete="off">
-                    <label for="subject">Assunto</label>
-                </div>
-                <div class="input-group">
-                    <textarea id="message" name="message" rows="5" required
-                        placeholder="Write your message here…"></textarea>
-                    <label for="message">Como posso ajudar você?</label>
-                </div>
-                <button type="submit" class="submit-btn">Entre em contato agora</button>
-            </form>
-
-            <div class="contact-social-bar">
-                <nav aria-label="Navegação de links sociais">
-                    <ul class="footer_sociais">
-                        <li><a href="https://www.linkedin.com/in/anderson-isidoro/" target="_blank"
-                                aria-label="Acessar perfil do LinkedIn"><i class="fa-brands fa-linkedin-in"
-                                    aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com/andersoni_87" target="_blank"
-                                aria-label="Acessar perfil do Instagram"><i class="fa-brands fa-instagram"
-                                    aria-hidden="true"></i></a></li>
-                        <li><a href="https://github.com/aisidoro87" target="_blank"
-                                aria-label="Acessar perfil do GitHub"><i class="fa-brands fa-github-alt"
-                                    aria-hidden="true"></i></a></li>
-                        <li><a href="https://web.whatsapp.com/" target="_blank" aria-label="Acessar o whatsapp web"><i
-                                    class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
-                    </ul>
-                </nav>
             </div>
         </section>
     </main>
@@ -482,6 +339,47 @@
                 <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
             </button>
         </form>
+    </div>
+
+    <!-- MODAL DE DETALHES DO PROJETO -->
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+        <div class="project-modal-overlay" id="modal-overlay"></div>
+        <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+            <button class="project-modal-close" id="modal-close-btn" aria-label="Fechar detalhes do projeto">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="project-modal-header">
+                <div class="project-modal-cover">
+                    <img id="modal-project-img" src="" alt="Capa do projeto">
+                </div>
+                <div class="project-modal-header-info">
+                    <div class="project-modal-meta">
+                        <span class="category-badge" id="modal-project-badge"></span>
+                    </div>
+                    <h2 class="project-modal-title" id="modal-project-title"></h2>
+                    <p class="project-modal-desc" id="modal-project-short-desc"></p>
+                    <div class="project-modal-tags" id="modal-project-tags"></div>
+                </div>
+            </div>
+            <div class="project-modal-body">
+                <div class="project-modal-tabs" role="tablist">
+                    <button class="modal-tab-btn ativo" data-tab="visao-geral" role="tab" aria-selected="true"><i class="fa-solid fa-eye" aria-hidden="true"></i> Visão Geral</button>
+                    <button class="modal-tab-btn" data-tab="arquitetura" role="tab" aria-selected="false"><i class="fa-solid fa-cubes" aria-hidden="true"></i> Arquitetura & Stacks</button>
+                </div>
+                <div class="project-modal-tab-content">
+                    <div class="tab-pane ativo" id="tab-visao-geral"></div>
+                    <div class="tab-pane" id="tab-arquitetura"></div>
+                </div>
+            </div>
+            <div class="project-modal-footer">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-demo" id="modal-demo-link">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Ver Projeto Live
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="modal-btn modal-btn-github" id="modal-github-link">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i> Ver Código no GitHub
+                </a>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
