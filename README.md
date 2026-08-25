@@ -14,13 +14,14 @@
 - [🎨 Apresentação e Design](#-apresentação-e-design)
 - [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas)
 - [📁 Estrutura do Projeto](#-estrutura-do-projeto)
+- [🚀 Projetos em Destaque](#-projetos-em-destaque)
 - [⭐ Principais Funcionalidades](#-principais-funcionalidades)
 - [🔍 Filtros e Modal Reutilizável de Projetos](#-filtros-e-modal-reutilizável-de-projetos)
 - [♿ Responsividade e Acessibilidade](#-responsividade-e-acessibilidade)
 - [🤖 Integração com "Anderson AI"](#-integração-com-anderson-ai)
 - [🔌 Comunicação com o Back-end](#-comunicação-com-o-back-end)
 - [💡 Ferramentas de Desenvolvimento com IA](#-ferramentas-de-desenvolvimento-com-ia)
-- [🚀 Deploy & Hospedagem](#-deploy--hospedagem)
+- [🌐 Deploy & Hospedagem](#-deploy--hospedagem)
 - [🌱 Aprendizados e Evolução](#-aprendizados-e-evolução)
 - [💻 Como Executar o Projeto Localmente](#-como-executar-o-projeto-localmente)
 
@@ -30,7 +31,7 @@
 
 O objetivo principal deste portfólio é apresentar de forma clara, profissional e impactante a minha trajetória de transição de carreira para a área de desenvolvimento de software. 
 
-Ele reúne meus principais projetos práticos — desde aplicações web com JavaScript puro até ecossistemas SaaS em React, TypeScript, Supabase e Inteligência Artificial —, demonstrando minhas habilidades em arquitetura de código, usabilidade (UX/UI), consumo de APIs e resolução de problemas reais.
+Ele reúne meus principais projetos práticos — desde aplicações web focadas em JavaScript puro até ecossistemas SaaS em React, TypeScript, Supabase e Inteligência Artificial —, demonstrando minhas habilidades em arquitetura de código, usabilidade (UX/UI), consumo de APIs e resolução de problemas reais.
 
 ---
 
@@ -54,10 +55,10 @@ A interface foi projetada seguindo as melhores práticas do design moderno de pr
 - **OpenAI API (`gpt-4o-mini`)**: Modelo de linguagem embutido no assistente virtual **Anderson AI**.
 
 ### **Tecnologias dos Projetos Apresentados no Portfólio**
-*Os projetos em destaque no acervo utilizam também:*
+*Os projetos em destaque no acervo utilizam:*
 - **React & TypeScript**: Aplicações com componentes tipados e escaláveis (*MedCare Connect*, *Kallos Barbearia*, *Dashboard SST*).
-- **Supabase (PostgreSQL / RLS)**: Banco de dados relacional e autenticação (*MedCare Connect*, *Dashboard SST*).
-- **TailwindCSS, Vite & Recharts**: Design systems responsivos e gráficos de indicadores.
+- **Supabase (PostgreSQL / RLS)**: Banco de dados relacional e autenticação segura (*MedCare Connect*, *Dashboard SST*).
+- **TailwindCSS, Vite & Recharts**: Design systems responsivos e gráficos estatísticos em tempo real.
 - **APIs Externas & LocalStorage**: Consumo de APIs REST externas (ex: OpenWeatherMap no projeto *Buscar Clima*) e persistência offline (LocalStorage no projeto *Lista de Tarefas*).
 
 ---
@@ -67,22 +68,34 @@ A interface foi projetada seguindo as melhores práticas do design moderno de pr
 ```text
 portfolio-oficial/
 ├── api/
-│   └── chat.js             # Vercel Serverless Function (integração com a IA do Anderson AI)
-├── imgs/                   # Imagens e logotipos dos projetos e perfil profissional
+│   └── chat.js             # Vercel Serverless Function (integração segura com OpenAI)
+├── imgs/                   # Imagens, capas de projetos e fotos de perfil
 │   ├── anderson-frente.png
 │   ├── anderson-direita.png
 │   ├── logotipo_mc.png
 │   ├── logotipo_tst.png
+│   ├── kallos_icon.png
 │   ├── busca_clima.png
-│   ├── lista_tarefas.png
-│   └── kallos_icon.png
-├── index.html              # Estrutura principal do portfólio e modal dialog
+│   └── lista_tarefas.png
+├── index.html              # Estrutura principal do portfólio e modal dialog acessível
 ├── style.css               # Sistema de estilos globais, variáveis CSS e responsividade
-├── script.js              # Lógica principal, filtros de projetos, modal e Anderson AI
+├── script.js              # Lógica principal, dados de projetos, filtros e Anderson AI
 ├── package.json            # Configurações do projeto e dependências Node.js
 ├── .env.local              # Variáveis de ambiente locais (chaves de API)
-└── README.md               # Documentação detalhada do projeto
+└── README.md               # Documentação técnica e detalhada do projeto
 ```
+
+---
+
+## 🚀 Projetos em Destaque
+
+| Projeto | Status | Tecnologias Principais | Links |
+| :--- | :--- | :--- | :--- |
+| **MedCare Connect** | 🟡 *Em andamento* | React, TypeScript, Vite, TailwindCSS, Supabase | [Deploy](https://medcare-connect.vercel.app/) \| [GitHub](https://github.com/aisidoro87/medcare-connect) |
+| **Kallos Barbearia** | 🟡 *Em andamento* | React, TypeScript, Vite, CSS Modules | [Deploy](https://kallos-appointment-booker.vercel.app/) \| [GitHub](https://github.com/aisidoro87/kallos-appointment-booker) |
+| **Dashboard SST** | 🟡 *Em andamento* | React, TypeScript, Supabase, Recharts, IA API | [Deploy](https://saudeocupacional-dashboard.vercel.app/) \| [GitHub](https://github.com/aisidoro87/saude-ocupacional) |
+| **Buscar Clima & Tempo** | 🟢 *Concluído* | JavaScript (ES6+), HTML5, CSS3, OpenWeather API | [Deploy](https://buscar-clima-tempo.vercel.app/) \| [GitHub](https://github.com/aisidoro87/clima-tempo) |
+| **Lista de Tarefas (To-Do List)** | 🟢 *Concluído* | JavaScript Vanilla, HTML5, CSS3, LocalStorage | [Deploy](https://tarefasemdia.vercel.app/) \| [GitHub](https://github.com/aisidoro87/Lista-de-tarefas) |
 
 ---
 
@@ -90,7 +103,7 @@ portfolio-oficial/
 
 1. **Efeito Typewriter no Hero**: Alternância dinâmica de títulos e papéis profissionais na tela inicial.
 2. **Abas Interativas de Resumo**: Alternância simplificada entre históricos de **Experiências Profissionais** e **Formação Acadêmica**.
-3. **Galeria de Projetos Dinâmica**: Renderização automatizada de cards a partir de uma estrutura de dados centralizada em JavaScript.
+3. **Galeria de Projetos Dinâmica**: Renderização automatizada de cards a partir de uma estrutura de dados centralizada em JavaScript (`PORTFOLIO_PROJECTS`).
 4. **Cards de Contato Centralizados**: Acesso direto a redes profissionais e canais de mensagem (LinkedIn, Instagram, GitHub e WhatsApp).
 5. **Assistente Virtual Flutuante (Anderson AI)**: Chat interativo sempre disponível para tirar dúvidas de recrutadores e visitantes.
 
@@ -102,7 +115,7 @@ portfolio-oficial/
 O portfólio conta com botões de filtragem em tempo real:
 - **Todos**: Exibe o catálogo completo de soluções.
 - **Em andamento**: Destaca os projetos em desenvolvimento ativo (*MedCare Connect*, *Kallos Barbearia*, *Dashboard Segurança do Trabalho*).
-- **Concluídos**: Exibe as aplicações finalizadas (*Buscar Clima*, *Lista de Tarefas*, *Mario LP*, *Netflix UI*, *Sonic LP*).
+- **Concluídos**: Exibe as aplicações finalizadas (*Buscar Clima & Tempo*, *Lista de Tarefas*).
 
 ### **Modal Reutilizável de Detalhes Técnicos**
 Ao clicar em qualquer card de projeto, um modal abre dinamicamente com navegação por abas:
@@ -124,12 +137,12 @@ Ao clicar em qualquer card de projeto, um modal abre dinamicamente com navegaç�
 ## 🤖 Integração com "Anderson AI"
 
 ### **O que é o Anderson AI?**
-O **Anderson AI** é um assistente virtual flutuante integrado ao portfólio. Ele funciona como uma IA treinada com o contexto profissional do Anderson Isidoro, pronta para responder perguntas de visitantes, clientes e recrutadores 24 horas por dia.
+O **Anderson AI** é um assistente virtual flutuante integrado ao portfólio. Ele funciona como uma IA contextualizada com a trajetória profissional, formação e projetos do Anderson Isidoro, pronta para responder perguntas de visitantes, clientes e recrutadores 24 horas por dia.
 
 ### **Como Funciona?**
 - O usuário clica no botão flutuante com o ícone de robô no canto inferior direito.
-- A janela de conversa se abre com uma mensagem amigável de boas-vindas digitada em tempo real.
-- O usuário faz qualquer pergunta (ex: *"Qual é a experiência do Anderson em SST?"*, *"Quais tecnologias ele utiliza no projeto de Dashboard?"*).
+- A janela de conversa se abre com uma mensagem de boas-vindas digitada em tempo real.
+- O usuário faz qualquer pergunta (ex: *"Qual é a experiência do Anderson em SST?"*, *"Quais tecnologias ele utilizou no MedCare Connect?"*).
 - O assistente exibe um indicador visual de digitação (*typing indicator*) enquanto consulta a API e retorna a resposta formatada.
 
 ---
@@ -143,7 +156,7 @@ sequenceDiagram
     participant U as Usuário (Browser)
     participant F as Front-end (script.js)
     participant B as Back-end (/api/chat)
-    participant IA as Modelo de IA (OpenAI / Gemini)
+    participant IA as Modelo de IA (OpenAI GPT-4o-mini)
 
     U->>F: Digita pergunta e envia formulário
     F->>F: Exibe mensagem do usuário + Indicador de Digitação
@@ -158,7 +171,7 @@ sequenceDiagram
 
 ## 💡 Ferramentas de Desenvolvimento com IA
 
-O desenvolvimento deste portfólio e dos meus projetos utiliza a Inteligência Artificial como uma **ferramenta de produtividade e amplificação técnica**:
+O desenvolvimento deste portfólio e dos projetos utiliza a Inteligência Artificial como uma **ferramenta de produtividade e amplificação técnica**:
 - **ChatGPT & Antigravity (Gemini CLI)**: Prototipação rápida, arquitetura de componentes, elaboração de prompts de contexto e auxílio no debugging.
 - **Lovable & v0**: Geração de ideias visuais e refinamento de layouts de interface.
 - **GitHub Copilot**: Autocompletar código e aceleração na escrita de funções reutilizáveis.
@@ -167,7 +180,7 @@ O desenvolvimento deste portfólio e dos meus projetos utiliza a Inteligência A
 
 ---
 
-## 🚀 Deploy & Hospedagem
+## 🌐 Deploy & Hospedagem
 
 O projeto está hospedado e publicado na **Vercel**:
 - **Deploy Contínuo**: Integração automática com o repositório GitHub (`main` branch).
@@ -177,7 +190,7 @@ O projeto está hospedado e publicado na **Vercel**:
 
 ## 🌱 Aprendizados e Evolução
 
-- **Transição de Carreira Estruturada**: Integração de mais de 17 anos de bagagem analítica na área de Segurança do Trabalho com desenvolvimento web.
+- **Transição de Carreira Estruturada**: Integração de mais de 17 anos de bagagem analítica na área de Segurança do Trabalho com desenvolvimento web moderno.
 - **Domínio de JavaScript Assíncrono**: Manipulação avançada do DOM, estado local e comunicação via requisições Fetch.
 - **Arquitetura de UI Reutilizável**: Criação de modais dinâmicos e componentes modulares escaláveis.
 
@@ -203,7 +216,7 @@ O projeto está hospedado e publicado na **Vercel**:
    ```
 
 3. **Configurar as variáveis de ambiente:**
-   Crie um arquivo `.env.local` na raiz do projeto contendo as chaves necessárias:
+   Crie um arquivo `.env.local` na raiz do projeto contendo a sua chave da OpenAI:
    ```env
    OPENAI_API_KEY=sua_chave_api_aqui
    ```
@@ -213,10 +226,10 @@ O projeto está hospedado e publicado na **Vercel**:
    ```bash
    npx vercel dev
    ```
-   Ou simplesmente abra o arquivo `index.html` utilizando a extensão **Live Server** do VS Code.
-
+   Ou, para visualizar apenas a interface do portfólio sem o funcionamento do Anderson AI, abra o arquivo `index.html` utilizando a extensão **Live Server** do VS Code.
+eu 
 5. **Acessar no navegador:**
-   Abra `http://localhost:3000` (ou a URL fornecida no terminal).
+   Abra `http://localhost:3000` (ou a URL indicada no terminal).
 
 ---
 
