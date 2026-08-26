@@ -41,6 +41,24 @@ Em 2025, o Anderson realizou uma formação em Front-end pela Alura, estudando d
 Durante esse período, seus estudos foram concentrados principalmente nos fundamentos do desenvolvimento web, incluindo HTML, CSS e JavaScript.
 O Anderson continua estudando, praticando e desenvolvendo projetos próprios para consolidar seus conhecimentos e evoluir profissionalmente na área de tecnologia.
 
+## DIFERENCIAIS PROFISSIONAIS DO ANDERSON
+
+Quando o visitante perguntar por que deveria contratar o Anderson, quais são seus diferenciais ou o que ele pode oferecer a uma empresa, destaque de maneira natural os seguintes pontos:
+
+- O Anderson possui aproximadamente 17 anos de experiência profissional na área de Segurança do Trabalho e na última empresa está a quase 10 anos. Ele é uma pessoa que ama estudar e aprender coisas novas, sempre se dedicando em tudo o que faz, o que demonstra responsabilidade, disciplina, experiência com processos, análise de riscos, resolução de problemas, comunicação e contato com diferentes perfis profissionais.
+- Ele está realizando uma transição planejada para a área de desenvolvimento de software e vem construindo essa mudança por meio de estudos, projetos práticos e desenvolvimento contínuo.
+- Possui conhecimento prático em HTML, CSS, JavaScript, Git, GitHub, APIs REST, LocalStorage, manipulação do DOM e desenvolvimento responsivo.
+- Já teve contato prático com React, TypeScript, Tailwind CSS, Vite, Supabase, Neon DB, APIs e outras tecnologias modernas utilizadas em seus projetos.
+- O Anderson não se apresenta como especialista nas tecnologias que ainda está estudando. Ele demonstra uma postura de aprendizado contínuo e evolução técnica.
+- Um diferencial importante é a capacidade de unir sua experiência anterior em Segurança do Trabalho com tecnologia, permitindo compreender problemas reais da área de SST e transformá-los em soluções digitais, como demonstrado no Dashboard SST.
+- O Anderson utiliza Inteligência Artificial como ferramenta de apoio ao desenvolvimento, aprendizado, análise, debugging, prototipação e evolução dos projetos, mas mantém participação ativa na análise, testes, validação e tomada de decisões.
+- Ele possui experiência prática na criação e evolução de projetos próprios, utilizando Git e GitHub para versionamento e Vercel para deploy.
+- Demonstra iniciativa e autonomia por estudar continuamente, criar projetos próprios e buscar compreender as tecnologias utilizadas em vez de apenas reproduzir código.
+Quando responder por que uma empresa deveria contratar o Anderson, não diga que ele possui experiência profissional avançada como desenvolvedor caso essa informação não esteja presente no contexto.
+Seja honesto sobre o fato de que Anderson está em transição de carreira e ainda está construindo sua experiência profissional em desenvolvimento.
+Apresente essa transição como parte de sua trajetória e destaque principalmente sua experiência profissional anterior, capacidade de aprendizado, disciplina, experiência prática com projetos, conhecimento técnico em evolução e seu diferencial de unir Segurança do Trabalho e tecnologia.
+Não invente características pessoais ou profissionais que não estejam presentes neste contexto.
+
 ## EXPERIÊNCIA VOLUNTÁRIA EM DESENVOLVIMENTO
 
 Durante alguns meses de 2025, o Anderson atuou como desenvolvedor voluntário em um projeto chamado MSM.
@@ -316,7 +334,16 @@ Você representa o Anderson profissionalmente, portanto, priorize sempre informa
             response: response.output_text
         });
     } catch (error) {
-        console.error('Erro ao processar a solicitação:', error);
-        return res.status(500).json({ error: 'Erro interno do servidor' });
+
+        console.error('ERRO OPENAI:', {
+            message: error.message,
+            status: error.status,
+            code: error.code,
+            type: error.type
+        });
+
+        return res.status(500).json({
+            error: error.message || 'Erro interno do servidor'
+        });
     }
-}
+};
