@@ -6,6 +6,8 @@ const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
 
+console.log('API KEY EXISTE?', !!process.env.OPENAI_API_KEY);
+
 // Função para lidar com a rota /api/chat
 module.exports = async (req, res) => {
     if (req.method !== 'POST') {
