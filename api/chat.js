@@ -2,8 +2,16 @@ require('dotenv').config();
 // api/chat.js
 const OpenAI = require('openai');
 
-const client = new OpenAI({
+/*const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
+});*/
+
+const apiKey = process.env.OPENAI_API_KEY;
+
+console.log('API KEY EXISTE?', !!apiKey);
+
+const client = new OpenAI({
+    apiKey
 });
 
 console.log('API KEY EXISTE?', !!process.env.OPENAI_API_KEY);
