@@ -96,7 +96,7 @@ header {
 
 header .logo h1 {
     font-family: var(--font-body);
-    font-size: 1.85rem;
+    font-size: 2.6rem;
     color: var(--accent-color);
     font-weight: 700;
     line-height: 1.2;
@@ -340,6 +340,7 @@ main>section {
 .sobre_imagem_container {
     display: flex;
     justify-content: center;
+    margin-bottom: 14em;
 }
 
 .sobre_imagem_container img {
