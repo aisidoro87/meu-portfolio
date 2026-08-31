@@ -96,9 +96,10 @@ header {
 
 header .logo h1 {
     font-family: var(--font-body);
-    font-size: 2.6rem;
+    font-size: 1.85rem;
     color: var(--accent-color);
     font-weight: 700;
+    line-height: 1.2;
 }
 
 header .logo span {
@@ -151,10 +152,11 @@ header .navegacao-primaria li a.ativo::after {
     background: none;
     border: none;
     color: var(--text-primary);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    padding: 5px;
-    transition: color 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .mobile-menu-toggle:hover {
@@ -172,9 +174,8 @@ main>section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 40px 30px 20px 30px;
+    padding: 40px 30px 30px 30px;
     position: relative;
-    overflow: hidden;
 }
 
 #home {
@@ -339,7 +340,6 @@ main>section {
 .sobre_imagem_container {
     display: flex;
     justify-content: center;
-    margin-bottom: 14em;
 }
 
 .sobre_imagem_container img {
@@ -530,7 +530,7 @@ main>section {
 .resume_dots {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     margin-top: 15px;
 }
 
@@ -538,6 +538,12 @@ main>section {
     color: var(--border-color);
     cursor: pointer;
     font-size: 0.75rem;
+    padding: 8px;
+    min-width: 32px;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -595,7 +601,7 @@ main>section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
     gap: 25px;
     width: 100%;
 }
@@ -1141,67 +1147,6 @@ main>section {
     }
 }
 
-/* MEDIA QUERIES (RESPONSIVE DESIGN) */
-@media (max-width: 992px) {
-    main>section {
-        min-height: auto;
-        height: auto;
-        padding: 50px 20px 30px 20px;
-    }
-
-    .section-div {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .hero-text {
-        align-items: center;
-    }
-
-    .btn-cv {
-        align-self: center;
-    }
-
-    .hero-image {
-        order: -1;
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    .sobre_layout {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .sobre_imagem_container {
-        max-width: 280px;
-        margin: 0 auto;
-    }
-
-    .my_services ul {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .resume_gerenico {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-/*
-    .cursos {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }*/
-
-    .projects_armazenamento ul {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-cards {
-        gap: 16px;
-    }
-}
-
 /* =========================================
    ANDERSON AI
    ========================================= */
@@ -1242,7 +1187,6 @@ main>section {
     flex-direction: column;
     z-index: 9999;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px) scale(0.95);
@@ -1409,75 +1353,440 @@ main>section {
     }
 }
 
-/* ANDERSON AI — MOBILE */
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE SYSTEM)
+   ========================================= */
 
-@media (max-width: 768px) {
-
-    .ai-chat {
-        right: 15px;
-        bottom: 85px;
-        width: calc(100vw - 30px);
-        height: 70vh;
-        max-height: 500px;
+/* 1. TABLET & SMALL LAPTOPS (<= 992px) */
+@media (max-width: 992px) {
+    main>section {
+        min-height: auto;
+        height: auto;
+        padding: 45px 24px 35px 24px;
     }
 
-    .ai-toggle {
-        right: 15px;
-        bottom: 15px;
+    .section-div {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-cv {
+        align-self: center;
+    }
+
+    .hero-image {
+        order: -1;
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .sobre_layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .sobre_imagem_container {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .my_services ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .resume_gerenico {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-cards {
+        gap: 16px;
     }
 }
 
+/* 2. MOBILE LANDSCAPE & PHONES (<= 768px) */
 @media (max-width: 768px) {
+    html {
+        scroll-padding-top: 65px;
+    }
+
+    header {
+        padding: 10px 20px;
+        height: 65px;
+    }
+
+    header .logo h1 {
+        font-size: 1.55rem;
+    }
+
+    main {
+        margin-top: 65px;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     header .navegacao-primaria {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 65px;
         right: -100%;
-        width: 250px;
-        height: calc(100vh - 70px);
+        width: min(290px, 80vw);
+        height: calc(100vh - 65px);
+        height: calc(100dvh - 65px);
         background: rgba(11, 11, 13, 0.98);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         border-left: 1px solid var(--border-color);
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 40px;
-        gap: 25px;
-        transition: right 0.4s cubic-bezier(0.1, 0.8, 0.25, 1);
+        padding: 30px 24px;
+        gap: 16px;
+        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+        z-index: 999;
     }
 
     header .navegacao-primaria.ativado {
         right: 0;
     }
 
-    .mobile-menu-toggle {
-        display: block;
+    header .navegacao-primaria li {
+        width: 100%;
     }
 
-    .hero-text .digitando {
-        font-size: 2.2rem;
-        min-height: 5.5rem;
+    header .navegacao-primaria li a {
+        display: block;
+        width: 100%;
+        font-size: 1.05rem;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    main>section {
+        padding: 35px 16px 30px 16px;
     }
 
     .sobre_titulo h1 {
         font-size: 2rem;
     }
 
+    .sobre_titulo p {
+        font-size: 0.88rem;
+    }
+
+    .hero-text .digitando {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+        min-height: 4.8rem;
+    }
+
+    .sobre_info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .sobre_info p {
+        word-break: break-word;
+    }
+
     .my_services ul {
         grid-template-columns: 1fr;
     }
 
-    .projects_armazenamento ul {
-        grid-template-columns: 1fr;
+    /* PROJECT MODAL (RESPONSIVE TABS & STACK) */
+    .project-modal {
+        padding: 12px;
     }
 
-    .contact-card {
-        width: 120px;
-        height: 120px;
+    .project-modal-dialog {
+        max-height: 94vh;
+        border-radius: 14px;
+    }
+
+    .project-modal-cover {
+        height: 140px;
+    }
+
+    .project-modal-header-info {
+        padding: 14px 18px;
+    }
+
+    .project-modal-title {
+        font-size: 1.35rem;
+    }
+
+    .project-modal-body {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-modal-tabs {
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 8px 12px;
+        gap: 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-tab-btn {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .project-modal-tab-content {
+        padding: 16px 18px 24px 18px;
+        max-height: 46vh;
+    }
+
+    .project-modal-footer {
+        flex-direction: column;
+        padding: 12px 18px;
+        gap: 8px;
+    }
+
+    .modal-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+        font-size: 0.88rem;
+    }
+
+    .arch-stack-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    /* ANDERSON AI ON MOBILE */
+    .ai-chat {
+        right: 12px;
+        bottom: 80px;
+        width: calc(100vw - 24px);
+        max-width: 380px;
+        height: calc(85vh - 90px);
+        max-height: 500px;
+    }
+
+    .ai-toggle {
+        right: 16px;
+        bottom: 16px;
+        width: 52px;
+        height: 52px;
+        font-size: 1.25rem;
     }
 }
 
-/* Reduced Motion preferences */
+/* 3. STANDARD MOBILE PHONES (<= 480px) */
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 60px;
+    }
+
+    header {
+        padding: 8px 14px;
+        height: 60px;
+    }
+
+    header .logo h1 {
+        font-size: 1.35rem;
+    }
+
+    main {
+        margin-top: 60px;
+    }
+
+    main>section {
+        padding: 28px 12px 24px 12px;
+    }
+
+    .sobre_titulo h1 {
+        font-size: 1.75rem;
+    }
+
+    .sobre_titulo p {
+        font-size: 0.82rem;
+    }
+
+    .sobre_paragrafo, .hero_paragrafo {
+        text-align: left;
+    }
+
+    .hero-text h2:first-child {
+        font-size: 1.15rem;
+    }
+
+    .hero-text .digitando {
+        font-size: 1.5rem;
+        min-height: 3.8rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .btn-cv {
+        padding: 8px 22px;
+        font-size: 0.88rem;
+    }
+
+    .hero-image {
+        max-width: 220px;
+    }
+
+    .sobre_imagem_container {
+        max-width: 220px;
+    }
+
+    .project_models {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .project_navegacao {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        padding: 4px;
+        border-radius: 16px;
+    }
+
+    .project_navegacao li {
+        padding: 6px 12px;
+        font-size: 0.78rem;
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .modern-card-body {
+        padding: 16px;
+    }
+
+    .modern-card-title {
+        font-size: 1.12rem;
+    }
+
+    .modern-card-desc {
+        font-size: 0.86rem;
+        margin-bottom: 12px;
+    }
+
+    .experience_content,
+    .education_content {
+        padding: 18px 14px;
+    }
+
+    .resume_slide h3 {
+        font-size: 1.05rem;
+    }
+
+    .resume_slide h4 {
+        font-size: 0.88rem;
+    }
+
+    .resume_slide p {
+        font-size: 0.85rem;
+    }
+
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        max-width: 320px;
+        gap: 10px;
+    }
+
+    .contact-card {
+        width: 100%;
+        height: 105px;
+        gap: 8px;
+        border-radius: 10px;
+    }
+
+    .contact-card__icon {
+        font-size: 1.5rem;
+    }
+
+    .contact-card__label {
+        font-size: 0.82rem;
+    }
+
+    .project-modal-dialog {
+        max-height: 96vh;
+    }
+
+    .project-modal-header-info {
+        padding: 10px 14px;
+    }
+
+    .project-modal-cover {
+        height: 110px;
+    }
+
+    .project-modal-tab-content {
+        padding: 12px 14px 20px 14px;
+    }
+
+    .tab-pane p {
+        font-size: 0.88rem;
+    }
+
+    .tab-pane ul li {
+        font-size: 0.85rem;
+    }
+
+    .project-modal-close {
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.95rem;
+    }
+}
+
+/* 4. EXTRA SMALL PHONES (<= 360px) */
+@media (max-width: 360px) {
+    header .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr;
+        max-width: 220px;
+    }
+
+    .contact-card {
+        height: 70px;
+        flex-direction: row;
+        gap: 12px;
+    }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-delay: 0s !important;

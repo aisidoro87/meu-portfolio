@@ -58,26 +58,44 @@ function initMobileMenu() {
     const navMenu = document.querySelector('.navegacao-primaria');
     if (!toggleBtn || !navMenu) return;
 
-    toggleBtn.addEventListener('click', () => {
-        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-        toggleBtn.setAttribute('aria-expanded', !expanded);
+    function closeMenu() {
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        navMenu.classList.remove('ativado');
+        const icon = toggleBtn.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !isExpanded);
         navMenu.classList.toggle('ativado');
 
         const icon = toggleBtn.querySelector('i');
         if (navMenu.classList.contains('ativado')) {
-            icon.className = 'fa-solid fa-xmark';
+            if (icon) icon.className = 'fa-solid fa-xmark';
         } else {
-            icon.className = 'fa-solid fa-bars';
+            if (icon) icon.className = 'fa-solid fa-bars';
         }
     });
 
-    // Close menu when clicking a link
+    // Close menu when clicking any nav link
     navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            toggleBtn.setAttribute('aria-expanded', 'false');
-            navMenu.classList.remove('ativado');
-            toggleBtn.querySelector('i').className = 'fa-solid fa-bars';
-        });
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('ativado') && !navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('ativado')) {
+            closeMenu();
+        }
     });
 }
 
